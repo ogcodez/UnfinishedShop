@@ -1,0 +1,11 @@
+.edit-form {
+  max-width: 400px;
+  margin: auto;
+}
+.wrapper-box{
+  margin: 10% 25%;
+  padding: 25px 25px;
+  overflow-x: hidden !important;
+  background-color:#dddddd;
+  border-radius: 25px;
+}

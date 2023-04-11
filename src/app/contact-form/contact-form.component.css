@@ -1,0 +1,18 @@
+
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper-box{
+    margin: 10% 25%;
+    padding: 25px 25px;
+    overflow-x: hidden !important;
+    background-color:#dddddd;
+    border-radius: 25px;
+}
+.form-text{
+    font-size: 16px;
+    color:black;
+}

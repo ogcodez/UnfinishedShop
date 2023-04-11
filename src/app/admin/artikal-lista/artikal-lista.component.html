@@ -1,0 +1,74 @@
+<div class="wrapper-box">
+  <div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search by title" [(ngModel)]="naslov" />
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="searchTitle()">
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Lista Artikala</h4>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let a of artikal; let i = index" [class.active]="i == currentIndex"
+          (click)="setActiveArtikal(a, i)">
+          {{ a.naslov }}
+        </li>
+      </ul>
+
+      <button class="m-3 btn btn-sm btn-danger" *ngIf="authService.getUser()" (click)="removeAllArtikal()">
+        Obrisi sve
+      </button>
+      <div>
+        <button class="m-3 btn btn-sm btn-outline-primary" routerLink="/add">
+          Dodaj artikal
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentArtikal">
+        <h4>Artikli</h4>
+        <div>
+          <label><strong>Naslov:</strong></label> {{ currentArtikal.naslov }}
+        </div>
+        <div>
+          <label><strong>Opis:</strong></label>
+          {{ currentArtikal.opis }}
+        </div>
+        <div>
+          <label><strong>Cena:</strong></label>
+          {{ currentArtikal.cena }}
+        </div>
+        <div>
+          <label><strong>Popust:</strong></label>
+          {{ currentArtikal.popust }}
+        </div>
+        <div>
+          <label><strong>Tip:</strong></label>
+          {{ currentArtikal.tip }}
+        </div>
+        <div>
+          <label><strong>Kolicina:</strong></label>
+          {{ currentArtikal.kolicina }}
+        </div>
+        <div>
+          <label><strong>Slika:</strong></label>
+          {{ currentArtikal.slika }}
+        </div>
+
+        <button class="m-3 btn btn-sm btn-danger" routerLink="/artikli/{{ currentArtikal.id }}"
+          *ngIf="authService.getUser()">
+          Edit
+        </button>
+      </div>
+
+      <div *ngIf="!currentArtikal">
+        <br />
+        <p>Pritisni na Artikal...</p>
+      </div>
+    </div>
+  </div>
+</div>

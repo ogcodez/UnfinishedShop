@@ -1,0 +1,42 @@
+<div class="super_container1">
+  <div class="container">
+    &nbsp;<div></div>
+    &nbsp;<div></div>
+    <div class="row">
+    <div style="margin-left: 42%;">
+      <form class="form">
+        <input class="input" type="text" name="pretraga" [(ngModel)]="naslov" #pretraga>                  
+          <i class="fa fa-search">
+            <button class="dugmence" (click)="searchTitle()" style="align-content: center;"></button>
+          </i>  
+      </form>
+    </div>
+      <div class="product-grid">
+        <ng-container *ngFor="let a of artikal | paginate: { itemsPerPage: 10, currentPage: p }; let i = index;">
+          <div class="product-item">
+            <div class="product discount">
+              <div class="product_image">
+                <img src="assets/images/product_1.png" alt="">
+              </div>
+              <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"
+                *ngIf="a.popust!=0">
+                <span>- {{a.popust}}%</span>
+              </div>
+              <div class="product_info">
+                <h3 class="product_name"><a href="#">{{ a.naslov }}</a></h3>
+                <h4 class="product_name"><a href="#">{{ a.opis }}</a></h4>
+                <div class="product_price" *ngIf="a.popust!=0"><span>{{ a.cena }} din </span></div>
+                <div class="product_price" *ngIf="a.popust!=0">{{ a.cena - ( a.cena / 100 * a.popust) }} din </div>
+                <div class="product_price" *ngIf="a.popust==0">{{ a.cena }} din </div>
+              </div>
+            </div>
+            <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

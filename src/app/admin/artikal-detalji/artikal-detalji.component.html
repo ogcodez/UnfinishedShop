@@ -1,0 +1,57 @@
+<div class="wrapper-box">
+  <div *ngIf="currentArtikal.id" class="edit-form">
+    <h4>Artikal</h4>
+    <form>
+      <div class="form-group">
+        <label for="naslov">Naslov</label>
+        <input type="text" class="form-control" id="naslov" required [(ngModel)]="currentArtikal.naslov"
+          name="naslov" />
+      </div>
+
+      <div class="form-group">
+        <label for="cena">opis</label>
+        <input class="form-control" id="opis" required [(ngModel)]="currentArtikal.opis" name="opis" />
+      </div>
+
+      <div class="form-group">
+        <label for="cena">cena</label>
+        <input class="form-control" id="cena" required [(ngModel)]="currentArtikal.cena" name="cena" />
+      </div>
+
+      <div class="form-group">
+        <label for="popust">popust</label>
+        <input class="form-control" id="popust" required [(ngModel)]="currentArtikal.popust" name="popust" />
+      </div>
+
+      <div class="form-group">
+        <label for="tip">tip</label>
+        <input class="form-control" id="tip" required [(ngModel)]="currentArtikal.tip" name="tip" />
+      </div>
+
+      <div class="form-group">
+        <label for="kolicina">kolicina</label>
+        <input class="form-control" id="kolicina" required [(ngModel)]="currentArtikal.kolicina" name="kolicina" />
+      </div>
+
+      <div class="form-group">
+        <label for="slika">slika</label>
+        <input class="form-control" id="slika" required [(ngModel)]="currentArtikal.slika" name="slika" />
+      </div>
+    </form>
+
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="deleteArtikal()">
+      Delete
+    </button>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="updateArtikal()" routerLink="/artikli">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentArtikal.id">
+    <br />
+    <p>Nema pristupa...</p>
+  </div>
+</div>

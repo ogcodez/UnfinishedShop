@@ -1,0 +1,54 @@
+<div class="super_container1">
+  <div class="wrapper-box">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="naslov">Naslov</label>
+          <input type="text" class="form-control" id="naslov" required [(ngModel)]="artikal.naslov" name="naslov" />
+        </div>
+
+        <div class="form-group">
+          <label for="cena">opis</label>
+          <input class="form-control" id="opis" required [(ngModel)]="artikal.opis" name="opis" />
+        </div>
+
+        <div class="form-group">
+          <label for="cena">cena</label>
+          <input class="form-control" id="cena" required [(ngModel)]="artikal.cena" name="cena" />
+        </div>
+
+        <div class="form-group">
+          <label for="popust">popust</label>
+          <input class="form-control" id="popust" required [(ngModel)]="artikal.popust" name="popust" />
+        </div>
+
+        <div class="form-group">
+          <label for="tip">tip</label>
+          
+          <select class="form-control" id="tip" required [(ngModel)]="artikal.tip" name="tip">
+            <option>bela_tehnika</option>
+            <option>skolska_oprema</option>
+            <option>odeca</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label for="kolicina">kolicina</label>
+          <input class="form-control" id="kolicina" required [(ngModel)]="artikal.kolicina" name="kolicina" />
+        </div>
+
+        <div class="form-group">
+          <label for="slika">slika</label>
+          <input class="form-control" id="slika" required [(ngModel)]="artikal.slika" name="slika" />
+        </div>
+
+        <button (click)="saveArtikal()" class="btn btn-success">Submit</button>
+      </div>
+
+      <div *ngIf="submitted">
+        <h4>Brao!</h4>
+        <button class="btn btn-success" (click)="newArtikal()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>

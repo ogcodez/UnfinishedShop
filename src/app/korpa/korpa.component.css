@@ -1,0 +1,16 @@
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+body.logged-in .m-3 btn btn-sm btn-danger {
+  display: none;
+}
+.wrapper-box{
+  margin: 10% 25%;
+  padding: 25px 25px;
+  overflow-x: hidden !important;
+  background-color:#dddddd;
+  border-radius: 25px;
+}

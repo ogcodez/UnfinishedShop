@@ -1,0 +1,31 @@
+  <div class="super_container1">
+    <div class="wrapper-box">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+              <div class="form-group">
+                <label class="form-text" for="Email">Email</label>
+                <input type="email" class="form-control" name="Email" aria-describedby="emailHelp"
+                  placeholder="Enter email" formControlName="Email" />
+              </div>
+              <div class="form-group">
+                <label class="form-text" for="fullname">Full Name</label>
+                <input type="text" class="form-control" name="Fullname" placeholder="Full Name"
+                  formControlName="Fullname" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-text" for="comment">Komentar</label>
+                <textarea class="form-control" formControlName="Comment" name="Comment">
+            </textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" [disabled]="!FormData.valid">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

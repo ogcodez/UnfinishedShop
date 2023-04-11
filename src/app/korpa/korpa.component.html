@@ -1,0 +1,44 @@
+<div class="wrapper-box">
+  <div class="list row">
+    <div class="col-md-6">
+      <h4>Lista Artikala</h4>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let a of artikal; let i = index" [class.active]="i == currentIndex"
+          (click)="setActiveArtikal(a, i)">
+          {{ a.naslov }}
+        </li>
+      </ul>
+      <div>
+        <button class="m-3 btn btn-sm btn-outline-primary" routerLink="/add">
+          Kupi
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentArtikal">
+        <h4>Artikli</h4>
+        <div>
+          <label><strong>Naslov:</strong></label> {{ currentArtikal.naslov }}
+        </div>
+        <div>
+          <label><strong>Opis:</strong></label>
+          {{ currentArtikal.opis }}
+        </div>
+        <div>
+          <label><strong>Cena:</strong></label>
+          {{ currentArtikal.cena }}
+        </div>
+        <div>
+          <label><strong>Popust:</strong></label>
+          {{ currentArtikal.popust }}
+        </div>
+        
+      </div>
+
+      <div *ngIf="!currentArtikal">
+        <br />
+        <p>Pritisni na Artikal...</p>
+      </div>
+    </div>
+  </div>
+</div>
